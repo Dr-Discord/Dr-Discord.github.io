@@ -1,3 +1,14 @@
+let ToClipboard = str => {
+  const el = document.createElement('textarea')
+  el.value = str
+  el.setAttribute('readonly', '')
+  el.style.position = 'absolute'
+  el.style.left = '-9999px'
+  document.body.appendChild(el)
+  el.select()
+  document.execCommand('copy')
+  document.body.removeChild(el)
+} 
 function refreshCSS() {
   var sheets = [].slice.call(document.getElementsByTagName("link"));
   var head = document.getElementsByTagName("head")[0];
@@ -66,7 +77,7 @@ setTimeout(() => {
       type: "item",
       name: "Copy Image URL",
       action: (_, { target }) => {
-        navigator.clipboard.writeText(target.src)
+        ToClipboard(target.src)
       }
     }])
   }
@@ -83,7 +94,7 @@ setTimeout(() => {
         type: "item",
         name: "Copy URL",
         action: (_, { path }) => {
-          navigator.clipboard.writeText(path.find(p => p.tagName === "A").href)
+          ToClipboard(path.find(p => p.tagName === "A").href)
         }
       }
     ])
