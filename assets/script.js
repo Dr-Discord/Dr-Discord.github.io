@@ -1,12 +1,12 @@
 let ToClipboard = str => {
-  const el = document.createElement('textarea')
+  const el = document.createElement("textarea")
   el.value = str
-  el.setAttribute('readonly', '')
-  el.style.position = 'absolute'
-  el.style.left = '-9999px'
+  el.setAttribute("readonly", "")
+  el.style.position = "absolute"
+  el.style.left = "-9999px"
   document.body.appendChild(el)
   el.select()
-  document.execCommand('copy')
+  document.execCommand("copy")
   document.body.removeChild(el)
 } 
 function refreshCSS() {
@@ -18,8 +18,8 @@ function refreshCSS() {
     parent.removeChild(elem);
     var rel = elem.rel;
     if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-      var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-      elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+      var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
+      elem.href = url + (url.indexOf("?") >= 0 ? "&" : "?") + "_cacheOverride=" + (new Date().valueOf());
     }
     parent.appendChild(elem);
   }
@@ -42,7 +42,8 @@ setTimeout(() => {
       <div></div>
     </div>
   </nav>`
-  refreshCSS()
+  //
+  location.host === "www.dr-discord.tk" ? null : refreshCSS()
   //
   document.scrollingElement = document.getElementById("content")
   //
