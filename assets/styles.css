@@ -112,7 +112,6 @@ body .layer#main > :last-child::-webkit-scrollbar-thumb {
 }
 #context-menu .context-menu-item {
   box-sizing: border-box;
-  display: flex;
   justify-content: space-between;
   align-items: center;
   min-height: 32px;
@@ -147,6 +146,22 @@ body .layer#main > :last-child::-webkit-scrollbar-thumb {
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+}
+
+a {
+  color: var(--text-normal);
+}
+
+ul {
+  list-style: number;
+}
+ul li {
+  margin-bottom: 10px;
+}
+ul li code {
+  background-color: var(--background-tertiary);
+  padding: 2px 4px;
+  border-radius: 4px;
 }
 
 :root {
