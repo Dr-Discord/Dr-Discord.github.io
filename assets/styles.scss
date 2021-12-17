@@ -49,6 +49,7 @@ body {
                 height: auto;
                 padding: 15px 0;
                 transition: 100ms ease transform;
+                position: relative;
                 &::after {
                   content: "";
                   position: absolute;

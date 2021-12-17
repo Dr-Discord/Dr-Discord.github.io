@@ -55,6 +55,7 @@ body .layer#main > :first-child nav > *:last-child > :not(:first-child):not(:las
   height: auto;
   padding: 15px 0;
   transition: 100ms ease transform;
+  position: relative;
 }
 body .layer#main > :first-child nav > *:last-child > :not(:first-child):not(:last-child)::after {
   content: "";
