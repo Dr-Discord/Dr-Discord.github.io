@@ -81,7 +81,7 @@ body .layer#main > :first-child nav > *:last-child > :last-child {
   margin-left: 10px;
 }
 body .layer#main > :last-child {
-  overflow: hidden auto;
+  overflow: hidden scroll;
 }
 body .layer#main > :last-child::-webkit-scrollbar {
   width: 16px;

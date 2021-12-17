@@ -79,7 +79,7 @@ body {
         }
       }
       &>:last-child {
-        overflow: hidden auto;
+        overflow: hidden scroll;
         &::-webkit-scrollbar {
           width: 16px;
           height: 16px;
