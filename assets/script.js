@@ -36,9 +36,9 @@ setTimeout(() => {
     <div>
       <div></div>
       <div><a href="/download/">Download</a></div>
-      <div><a href="/plugins/">Plugin's</a></div>
-      <div><a href="/themes/">Theme's</a></div>
-      <div><a href="/features/">Feature's</a></div>
+      <div><a href="/plugins/">Plugins</a></div>
+      <div><a href="/themes/">Themes</a></div>
+      <div><a href="/features/">Features</a></div>
       <div><a href="https://discord.gg/XkQMaw34">Server</a></div>
       <div></div>
     </div>
