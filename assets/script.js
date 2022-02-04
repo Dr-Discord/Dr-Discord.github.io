@@ -62,7 +62,7 @@ setTimeout(() => {
       </a>
     </div>
     <div>
-      <a href="https://discord.gg/XkQMaw34">Server
+      <a href="https://discord.gg/yYJA3qQE5F">Server
       </a>
     </div>
     <div>
