@@ -147,6 +147,7 @@ body .layer#main > :last-child::-webkit-scrollbar-thumb {
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  cursor: zoom-in;
 }
 
 a {
@@ -207,3 +208,27 @@ ul li code {
   --scrollbar-auto-scrollbar-color-thumb: #202225;
   --scrollbar-auto-scrollbar-color-track: #2f3136;
 }
+
+#modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#image-modal-wrap img {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*# sourceMappingURL=styles.css.map */
