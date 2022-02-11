@@ -45,7 +45,6 @@ function refreshCSS() {
   }
 }
 
-let inv = localStorage.inv_code ?? ""
 document.addEventListener("DOMContentLoaded", () => {
   function makeTitleBar() {
     document.getElementById("navbar").innerHTML = `<nav><div>
@@ -59,17 +58,12 @@ document.addEventListener("DOMContentLoaded", () => {
         <div><a href="/plugins/">Plugins</a></div>
         <div><a href="/themes/">Themes</a></div>
         <div><a href="/features/">Features</a></div>
-        <div><a href="${inv}">Server</a></div>
+        <div><a href="https://discord.com/invite/wZHrqrTf">Server</a></div>
         <div></div>
       </div>
     </nav>`
   }
   makeTitleBar()
-  if (!inv) fetch("https://discord.com/api/guilds/864267123694370836/widget.json", { cache: "force-cache" }).then(e => e.json()).then(e => {
-    inv = e.instant_invite 
-    localStorage.inv_code = e.instant_invite 
-    makeTitleBar()
-  })
   //
   location.host !== "127.0.0.1:5500" ? null : refreshCSS()
   //
@@ -80,10 +74,10 @@ document.addEventListener("DOMContentLoaded", () => {
     menu?.remove?.()
     menu = null
   }
-  function makeContextMenu(Element, menuItems) {
+  function makeContextMenu(Element, menuItems, ev = "oncontextmenu") {
     if (!Element) return console.error("Element is null")
     if (!menuItems || !Array.isArray(menuItems)) return console.error("menuItems is null or isnt a array")
-    Element.oncontextmenu = (e) => {
+    Element[ev] = (e) => {
       e.preventDefault()
       remove()
       menu = document.createElement("div")
