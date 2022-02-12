@@ -49,7 +49,22 @@ body .layer#main > :first-child nav > *:last-child {
 body .layer#main > :first-child nav > *:last-child > :first-child {
   width: 100%;
 }
-body .layer#main > :first-child nav > *:last-child > :not(:first-child):not(:last-child) {
+body .layer#main > :first-child nav > *:last-child > .discord_icon {
+  position: relative;
+  cursor: pointer;
+  min-width: 34px;
+  max-width: 34px;
+}
+body .layer#main > :first-child nav > *:last-child > .discord_icon:hover {
+  color: #1fad4e;
+}
+body .layer#main > :first-child nav > *:last-child > .discord_icon > svg {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+body .layer#main > :first-child nav > *:last-child > .text {
   min-width: auto;
   max-width: 100%;
   height: auto;
@@ -57,7 +72,7 @@ body .layer#main > :first-child nav > *:last-child > :not(:first-child):not(:las
   transition: 100ms ease transform;
   position: relative;
 }
-body .layer#main > :first-child nav > *:last-child > :not(:first-child):not(:last-child)::after {
+body .layer#main > :first-child nav > *:last-child > .text::after {
   content: "";
   position: absolute;
   height: 3px;
@@ -67,13 +82,13 @@ body .layer#main > :first-child nav > *:last-child > :not(:first-child):not(:las
   width: 0;
   transition: width 100ms ease-in-out;
 }
-body .layer#main > :first-child nav > *:last-child > :not(:first-child):not(:last-child):hover {
+body .layer#main > :first-child nav > *:last-child > .text:hover {
   transform: scale(1.1) translateY(-1px);
 }
-body .layer#main > :first-child nav > *:last-child > :not(:first-child):not(:last-child):hover::after {
+body .layer#main > :first-child nav > *:last-child > .text:hover::after {
   width: calc(100% - 14px);
 }
-body .layer#main > :first-child nav > *:last-child > :not(:first-child):not(:last-child) a {
+body .layer#main > :first-child nav > *:last-child > .text a {
   padding: 15px 7.5px;
   color: var(--text-normal);
   text-decoration: none;

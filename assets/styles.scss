@@ -43,7 +43,20 @@ body {
               & > :first-child {
                 width: 100%
               }
-              & > :not(:first-child):not(:last-child) {
+              & > .discord_icon {
+                position: relative;
+                cursor: pointer;
+                min-width: 34px;
+                max-width: 34px;
+                &:hover { color: #1fad4e }
+                & > svg {
+                  position: absolute;
+                  transform: translate(-50%, -50%);
+                  left: 50%;
+                  top: 50%;
+                }
+              }
+              & > .text {
                 min-width: auto;
                 max-width: 100%;
                 height: auto;
@@ -61,20 +74,18 @@ body {
                   transition: width 100ms ease-in-out;
                 }
                 &:hover {
-                  transform: scale(1.1) translateY(-1px);
                   &::after {
-                    width: calc(100% - 14px);
+                    width: calc(100% - 14px)
                   }
+                  transform: scale(1.1) translateY(-1px)
                 }
                 a {
                   padding: 15px 7.5px;
                   color: var(--text-normal);
-                  text-decoration: none;
+                  text-decoration: none
                 }
               }
-              & > :last-child {
-                margin-left: 10px;
-              }
+              & > :last-child { margin-left: 10px  }
             }
           }
         }
