@@ -1,36 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Details -->
-    <meta property="og:title" content="Dr Discord" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://www.dr-discord.tk/" />
-    <meta property="og:image" content="https://cdn.discordapp.com/avatars/515780151791976453/d0e8d7192bae1d757a5d96f68a8a349f.webp?size=128" />
-    <meta property="og:description" content="a site description thingy" />
-    <meta name="theme-color" content="#1fad4e">
-    <title>Discord Re-envisioned</title>
-    <!-- Assets -->
-    <link href="/assets/styles.css">
-    <script src="/assets/script.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <title>Dr-Discord</title>
+    
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/lightbox.css">
+
   </head>
-  <body>
-    <div>
-      Welcome to the home page of Discord Re-envisioned
-      <a href="plugins/">PLUGINS</a>
+
+<body>
+
+   
+  <!--header-->
+  <header class="main-header clearfix" role="header">
+    <div class="logo">
+      <a href="#"><em>DR</em> DISCORD</a>
     </div>
-    <div>
-      Previews
-      <div>
-        <div>Custom CSS / SCSS</div>
-        <img src="/assets/previews/CustomSCSS.png"/>
+    <a href="#menu" class="menu-link"><i class="fa fa-  eeexbars"></i></a>
+    <nav id="menu" class="main-nav" role="navigation">
+      <ul class="main-menu">
+        <li><a href="#section2">more</a></li>
+        <li><a id="invite" href="#" class="external">Discord</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="section main-banner" id="top" data-section="section1">
+      <video autoplay muted loop id="bg-video">
+          <source src="assets/images/course-video.mp4" type="video/mp4" />
+      </video>
+
+      <div class="video-overlay header-text">
+          <div class="caption">
+              <h2><em>DR</em> Discord</h2>
+              <div class="main-button">
+                  <div><a target='_blank' href="https://dr-discord.tk/download/">Download Now</a></div>
+              </div>
+          </div>
       </div>
-      <div>
-        <div>Add To Custom CSS</div>
-        <img src="/assets/previews/Add To Custom CSS.png"/>
+  </section>
+  <section class="section why-us" data-section="section2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-heading">
+            <h2>Want more?</h2>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div id='tabs'>
+            <ul>
+              <li><a href='#tabs-1'>Plugins</a></li>
+              <li><a href='#tabs-2'>Themes</a></li>
+              <li><a href='#tabs-3'>Develop</a></li>
+            </ul>
+            <section class='tabs-content'>
+              <article id='tabs-1'>
+                <div class="row">
+                  <!-- <div class="col-md-6">
+                    <img alt="">
+                  </div> -->
+                  <div class="col-md-6">
+                    <h4>Plugins</h4>
+                    <p>Want to inhance your discord-ines? Get some plugins made by the community [here]!</p>
+                  </div>
+                </div>
+              </article>
+              <article id='tabs-2'>
+                <div class="row">
+                  <!-- <div class="col-md-6">
+                    <img  alt="">
+                  </div> -->
+                  <div class="col-md-6">
+                    <h4>Themes</h4>
+                    <p>Need a beatufull client? Choose from hundreds of themes that the community has made for free! [browse]</p>
+                  </div>
+                </div>
+              </article>
+              <article id='tabs-3'>
+                <div class="row">
+                  <!-- <div class="col-md-6">
+                    <img alt="">
+                  </div> -->
+                  <div class="col-md-6">
+                    <h4>Development</h4>
+                    <p>Want to help test and developt with the growing development team? click [here] to get started!</p>
+                  </div>
+                </div>
+              </article>
+            </section>
+          </div>
+        </div>
       </div>
     </div>
-  </body>
+  </section>
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="assets/js/isotope.min.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/lightbox.js"></script>
+    <script src="assets/js/tabs.js"></script>
+    <script src="assets/js/video.js"></script>
+    <script src="assets/js/slick-slider.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script>
+        $('.nav li:first').addClass('active');
+
+        var showSection = function showSection(section, isAnimate) {
+          var
+          direction = section.replace(/#/, ''),
+          reqSection = $('.section').filter('[data-section="' + direction + '"]'),
+          reqSectionPos = reqSection.offset().top - 0;
+
+          if (isAnimate) {
+            $('body, html').animate({
+              scrollTop: reqSectionPos },
+            800);
+          } else {
+            $('body, html').scrollTop(reqSectionPos);
+          }
+
+        };
+
+        var checkSection = function checkSection() {
+          $('.section').each(function () {
+            var
+            $this = $(this),
+            topEdge = $this.offset().top - 80,
+            bottomEdge = topEdge + $this.height(),
+            wScroll = $(window).scrollTop();
+            if (topEdge < wScroll && bottomEdge > wScroll) {
+              var
+              currentId = $this.data('section'),
+              reqLink = $('a').filter('[href*=\\#' + currentId + ']');
+              reqLink.closest('li').addClass('active').
+              siblings().removeClass('active');
+            }
+          });
+        };
+
+        $(window).scroll(function () {
+          checkSection();
+        });
+
+        let outMost//bug: cant reopen after close
+        document.getElementById("invite").onclick = () => {
+          if (typeof outMost?.remove === "function") return outMost?.remove()
+          outMost = document.createElement("div")
+          outMost.id = "popout-invite"
+          outMost.innerHTML = `<iframe id="popout-invite-iframe" src="https://discord.com/widget?id=864267123694370836&theme=dark" width="300" height="440" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>`
+          document.body.appendChild(outMost)
+          outMost.style.right = "-300px"
+          outMost.style.transform = "translatex(0)"
+          outMost.style.transition = "transform .3s"
+          const iframe = document.getElementById("popout-invite-iframe")
+          iframe.onload = () => outMost.style.transform = "translatex(-308px)"
+          outMost.style.position = "fixed"
+          outMost.style.top = "80px"
+          nextTick(oneTimeEventListener, "click", () => {
+            outMost.remove()
+            outMost = null
+          })
+        }
+    </script>
+</body>
 </html>
