@@ -47,7 +47,7 @@
           <div class="caption">
               <h2><em>DR</em> Discord</h2>
               <div class="main-button">
-                  <div><a onclick='javascript:lightbox()'></a></div>
+                  <div><a href='javascript:lightbox()'></a></div>
               </div>
           </div>
       </div>
@@ -179,5 +179,117 @@
           })
         }
     </script>
+  <script>
+    async function getRelease(os){
+x=await fetch('https://api.github.com/repos/dr-discord/installer/releases').then(r=>r.json()).then(j=>j)
+return x[0].assets.find(e=>e.name.includes(os))}
+
+async function lightbox(){
+x=navigator.platform;
+y=await getRelease(x.includes`Win`?'win':(x.includes`Mac`?'mac':'linux'))
+	if(!document.getElementById('popoutStyle')){
+		const style = document.createElement('style');
+		style.id='popoutStyle'
+		style.innerText=`
+		.lb-popup{
+		    position: absolute;
+		    inset: 0;
+		    display: flex;
+		    align-items: center;
+		    justify-content: center;
+		    z-index: 10000;
+		}
+		.lb-bg{
+		    position: absolute;
+	   	 	inset: 0;
+	   	 	background: #0000008f;
+		}
+		.lb-main{
+			width: 350px;
+	   		height: 450px;
+		    background: rgb(24 35 58);
+		    z-index: 1;
+		    border-radius: 10px;
+	    	box-shadow: 4px 4px 20px 0px #00000085;
+	    	overflow: hidden;
+	    	display: flex;
+		    flex-direction: column;
+		    align-items: center;
+		}
+		.lb-main>.body{
+			background:rgb(57 67 87);
+		    width: 100%;
+		    height: 100%;
+		    padding: 5px;
+    		color: white;
+		}
+		.lb-main h2{
+			color:white;
+			font-size: 36px;
+		    font-weight: 700;
+		}
+		.lb-main em{
+			font-style: normal;
+		    color: #f52590;
+		    font-weight: 900;
+		}
+		.lb-main a.download{
+		    background-color: #f52590;
+		    color: #fff;
+		    font-size: 13px;
+		    text-transform: uppercase;
+		    letter-spacing: 0.5px;
+		    font-weight: 700;
+		    padding: 12px 20px;
+		    display: inline-block;
+		    outline: none;
+		}
+		`.replaceAll('\n','');
+		document.head.appendChild(style);
+	}
+
+	const br = document.createElement('br')
+	const lb = document.createElement('div')
+	lb.className='lb-popup'
+	const bg = document.createElement('div')
+	bg.className='lb-bg'
+	bg.addEventListener('click',removeLb)
+	const main = document.createElement('div')
+	main.className='lb-main'
+	const title = document.createElement('h2')
+	title.appendChild((()=>{x=document.createElement('em');x.innerText='DR';return x})())
+	title.appendChild((()=>{x=document.createTextNode('DISCORD');return x})())
+	main.appendChild(title)
+	const body = document.createElement('div')
+	body.className='body'
+	const osName = document.createElement('h4')
+	osName.innerText=y.name.includes`win`?'Windows':(y.name.includes`mac`?'MacOS':'Lynux')
+	body.appendChild(osName);
+	const description = document.createElement('p')
+	description.innerText=`click the button down below to downlaod the dr.discord installer for this OS.`
+	body.appendChild(description);
+	const downloadButton = document.createElement('a')
+	downloadButton.className='download';
+	downloadButton.target='_blank';
+	downloadButton.href=y.browser_download_url;
+	downloadButton.innerText='download';
+	body.appendChild(downloadButton);
+	body.appendChild(br);
+	const altDownloadButton = document.createElement('a');
+	altDownloadButton.target='_blank';
+	altDownloadButton.href='https://github.com/Dr-Discord/installer/releases';
+	altDownloadButton.innerText='or download from git';
+	body.appendChild(altDownloadButton);
+	main.appendChild(body);
+
+	function removeLb(){
+		lb.parentElement.removeChild(lb)
+	}
+
+	lb.appendChild(bg)
+	lb.appendChild(main)
+	document.body.appendChild(lb)
+}
+</script>
 </body>
 </html>
